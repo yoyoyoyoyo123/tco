@@ -65,6 +65,7 @@ public class valuerecueve : NetworkBehaviour
     public bool onetimetrigger;
     public GameObject crabman;
 
+
     public float runtime;
     public float litime;
 
@@ -170,8 +171,11 @@ public class valuerecueve : NetworkBehaviour
             }
         }
 
-        
 
+        if (Input.GetKeyDown(KeyCode.Alpha5))
+        {
+            cam.GetComponent<fishman>().grown = true;
+        }
         
 
         if (building.GetComponent<buildingmanger>().enabled)

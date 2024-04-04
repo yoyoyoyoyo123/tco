@@ -14,6 +14,7 @@ namespace Unity.Netcode.Components
     [DefaultExecutionOrder(100000)] // this is needed to catch the update time after the transform was updated by user scripts
     public class NetworkTransform : NetworkBehaviour
     {
+
         /// <summary>
         /// The default position change threshold value.
         /// Any changes above this threshold will be replicated.
@@ -46,7 +47,7 @@ namespace Unity.Netcode.Components
         /// This handler would be useful for server to modify pos/rot/scale before applying client's request.
         /// </summary>
         public OnClientRequestChangeDelegate OnClientRequestChange;
-
+        
         internal struct NetworkTransformState : INetworkSerializable
         {
             private const int k_InLocalSpaceBit = 0;
@@ -215,6 +216,7 @@ namespace Unity.Netcode.Components
                 }
             }
 
+           
             public void NetworkSerialize<T>(BufferSerializer<T> serializer) where T : IReaderWriter
             {
                 serializer.SerializeValue(ref SentTime);
@@ -887,7 +889,7 @@ namespace Unity.Netcode.Components
             Initialize();
         }
 
-        private void Initialize()
+        public void Initialize()
         {
             ResetInterpolatedStateToCurrentAuthoritativeState(); // useful for late joining
 

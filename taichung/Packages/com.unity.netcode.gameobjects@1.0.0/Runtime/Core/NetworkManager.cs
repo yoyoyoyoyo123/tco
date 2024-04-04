@@ -1031,7 +1031,7 @@ namespace Unity.Netcode
                 OnServerStarted?.Invoke();
                 return true;
             }
-            else
+            else 
             {
                 Debug.LogError($"Server is shutting down due to network transport start failure of {NetworkConfig.NetworkTransport.GetType().Name}!");
                 OnTransportFailure?.Invoke();

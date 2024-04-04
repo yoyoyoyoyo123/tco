@@ -20,6 +20,7 @@ TagManager:
   - midfinger
   - buildinglo
   - fishmanager
+  - fishman
   layers:
   - Default
   - TransparentFX
