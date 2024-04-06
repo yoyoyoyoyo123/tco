@@ -7,7 +7,7 @@ public class DisplaySwitcher : MonoBehaviour
     public Camera maincamera;
     public Camera VRcamera;
     public Canvas canvas;
-    
+    public Canvas ui;
     void Update()
     {
         // 如果按下了M键
@@ -16,6 +16,7 @@ public class DisplaySwitcher : MonoBehaviour
             maincamera.targetDisplay = 0;
             VRcamera.targetDisplay = 1;
             canvas.targetDisplay = 1;
+            ui.targetDisplay = 0;
         }
 
        

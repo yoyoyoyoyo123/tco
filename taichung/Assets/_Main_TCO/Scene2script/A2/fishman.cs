@@ -28,13 +28,15 @@ public class fishman : MonoBehaviour
     public float spawncolddowntime2;
     public float spawnruntime2;
     public bool walkbool;
-
+    public GameObject pinky;
+    public GameObject ui;
     public GameObject fishpri;
     private void Start()
     {
         fishmanflok.SetActive(true);
         orgiposition = fishmanflok.transform.position;
         grownspeed = 0;
+
     }
     void Update()
     {
@@ -64,6 +66,14 @@ public class fishman : MonoBehaviour
 
         }
 
+        if(fishmanflok.transform.position.z >= 9.4f)
+        {
+            pinky.GetComponent<fishmantrigger>().allowtrigger = true;
+        }
+        else
+        {
+            pinky.GetComponent<fishmantrigger>().allowtrigger = false;
+        }
 
         if (grownspeed <= -1.24f)
         {
@@ -122,5 +132,9 @@ public class fishman : MonoBehaviour
     {
         spawnbool2 = true;
         fishpri.SetActive(true);
+    }
+    public void end()
+    {
+        ui.GetComponent<Animator>().SetBool("fadeout", true);
     }
 }

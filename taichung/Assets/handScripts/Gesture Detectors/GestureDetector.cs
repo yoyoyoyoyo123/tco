@@ -174,6 +174,15 @@ public class GestureDetector : MonoBehaviour
                         player[1].GetComponent<valuerecueve>().intvalue = gesturesnumber;
                     }
                 }
+                else if (currentGesture.name == "start")
+                {
+                    gesturesnumber = 6;
+                    if (player.Length > 1)
+                    {
+                        gesturesnumber = 6;
+                        player[1].GetComponent<valuerecueve>().intvalue = gesturesnumber;
+                    }
+                }
                 // after that i will invoke what put in the Event if is present
                 currentGesture.onRecognized?.Invoke();
             }

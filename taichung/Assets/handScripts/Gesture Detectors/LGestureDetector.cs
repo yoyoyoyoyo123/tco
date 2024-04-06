@@ -155,7 +155,15 @@ public class LGestureDetector : MonoBehaviour
                         player[1].GetComponent<valuerecueve>().intLvalue = gesturesnumber;
                     }
                 }
-
+                else if (currentGesture.name == "man")
+                {
+                    gesturesnumber = 5;
+                    if (player.Length > 1)
+                    {
+                        gesturesnumber = 5;
+                        player[1].GetComponent<valuerecueve>().intLvalue = gesturesnumber;
+                    }
+                }
                 // after that i will invoke what put in the Event if is present
                 currentGesture.onRecognized?.Invoke();
             }

@@ -77,10 +77,12 @@ public class OVRMeshRenderer : MonoBehaviour
 
     public List<GameObject> thumbs = new List<GameObject>();
     public List<GameObject> mid = new List<GameObject>();
+    public List<GameObject> pinky = new List<GameObject>();
     public GameObject tL;
     public GameObject tR;
     public GameObject mL;
     public GameObject mR;
+    public GameObject pR;
     public GameObject[] player;
     private void Awake()
     {
@@ -163,6 +165,19 @@ public class OVRMeshRenderer : MonoBehaviour
             }
         }
 
+        GameObject[] foundpinky = GameObject.FindObjectsOfType<GameObject>();
+
+        // 遍历查找到的对象数组
+        foreach (GameObject pink in foundpinky)
+        {
+            // 检查对象的名称是否与我们想要查找的相同
+            if (pink.name == "Hand_Pinky0")
+            {
+                // 将符合条件的对象添加到列表中
+                pinky.Add(pink);
+            }
+        }
+
         tL.transform.parent = thumbs[3].gameObject.transform;
         tR.transform.parent = thumbs[1].gameObject.transform;
         tL.transform.localPosition = new Vector3(0, 0, 0);
@@ -172,6 +187,8 @@ public class OVRMeshRenderer : MonoBehaviour
         mL.transform.localPosition = new Vector3(0, 0, 0);
         mR.transform.localPosition = new Vector3(0, 0, 0);
 
+        pR.transform.parent = pinky[1].gameObject.transform;
+        pR.transform.localPosition = new Vector3(0, 0, 0);
         _skinnedMeshRenderer = GetComponent<SkinnedMeshRenderer>();
         if (!_skinnedMeshRenderer)
         {

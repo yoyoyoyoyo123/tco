@@ -10,6 +10,9 @@ public class hotkey : MonoBehaviour
     public GameObject[] buildings;
     public GameObject city;
     public GameObject cam;
+    public int count;
+    public int buildcount;
+    public GameObject fadeui;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,12 +24,19 @@ public class hotkey : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            for (int i = 0; i < 4; i++)
+            count += 1;
+            if (count <= 4)
             {
-                Instantiate(crab, new Vector3(crabposition.transform.position.x + Random.Range(-0.15f,0.15f) , crabposition.transform.position.y + Random.Range(-0.1f, 0.1f), crabposition.transform.position.z), Quaternion.Euler(new Vector3(90, 0, 0)));
+                Instantiate(crab, new Vector3(crabposition.transform.position.x + Random.Range(-0.15f, 0.15f), crabposition.transform.position.y + Random.Range(-0.1f, 0.1f), crabposition.transform.position.z), Quaternion.Euler(new Vector3(90, 0, 0)));
 
             }
+
         }
+        if(count > 4)
+        {
+            count = 5;
+        }
+
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             for (int i = 0; i < 4; i++)
@@ -38,10 +48,12 @@ public class hotkey : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            for (int i = 0; i < 4; i++)
+            if(buildcount <= 3)
             {
-                buildings[i].GetComponent<growvalue>().grow = true;
+                buildings[buildcount].GetComponent<growvalue>().grow = true;
+                buildcount += 1;
             }
+                  
         }
         if (Input.GetKeyDown(KeyCode.Alpha4))
         {
@@ -57,6 +69,10 @@ public class hotkey : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Alpha6))
         {
             cam.GetComponent<fishman>().grown = true;
+        }
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            fadeui.GetComponent<Animator>().enabled = true;
         }
     }
 }

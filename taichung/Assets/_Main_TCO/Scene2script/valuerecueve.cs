@@ -11,6 +11,8 @@ public class valuerecueve : NetworkBehaviour
     [SerializeField]
     private NetworkVariable<bool> housetri = new NetworkVariable<bool>();
     [SerializeField]
+    private NetworkVariable<bool> fishmantri = new NetworkVariable<bool>();
+    [SerializeField]
     private NetworkVariable<int> handRvalue = new NetworkVariable<int>();
     [SerializeField]
     private NetworkVariable<int> handLvalue = new NetworkVariable<int>();
@@ -32,6 +34,7 @@ public class valuerecueve : NetworkBehaviour
 
     public bool boolvalue;
     public bool housevalue;
+    public bool fishmanvalue;
     public int intvalue;
     public int intLvalue;
     public int ranvalue;
@@ -41,6 +44,7 @@ public class valuerecueve : NetworkBehaviour
 
     public bool netbool;
     public bool nethousebool;
+    public bool netfishmanbool;
     public float nethandx;
     public float nethandy;
     public float nethandz;
@@ -50,6 +54,7 @@ public class valuerecueve : NetworkBehaviour
 
     public bool oldinput;
     public bool oldhouseinput;
+    public bool oldfishmaninput;
     public int oldintinput;
     public int oldintLinput;
     public float oldhandx;
@@ -72,6 +77,7 @@ public class valuerecueve : NetworkBehaviour
     public bool countone;
     public GameObject[] mid;
     public GameObject cam;
+    public GameObject ui;
     // Start is called before the first frame update
     void Start()
     {
@@ -81,15 +87,20 @@ public class valuerecueve : NetworkBehaviour
         crabman = GameObject.FindGameObjectWithTag("crabman");
         building = GameObject.FindGameObjectWithTag("build");
         mid = GameObject.FindGameObjectsWithTag("midfinger");
+        
+        ui = GameObject.FindGameObjectWithTag("start");
     }
 
     // Update is called once per frame
     void Update()
     {
         
-        hand = GameObject.FindGameObjectWithTag("hand");
-        
+        if(handRvalue.Value == 6)
+        {
+            ui.GetComponent<Animator>().enabled = true;
+        }
 
+        hand = GameObject.FindGameObjectWithTag("hand");
         if (IsServer)
         {
             UpdateServer();
@@ -106,21 +117,21 @@ public class valuerecueve : NetworkBehaviour
                 hand.transform.position = new Vector3(handx.Value, handy.Value, handz.Value);
             }
         }
-
         this.transform.position = new Vector3(handx.Value, handy.Value, handz.Value);
 
-        
+
+
         if (crabsamount >= 4)
         {
             crabsamount = 4;
             foreach(GameObject mi in mid)
             {
-                if(mi.name == "midL ")
+                if(mi.name == "midfingerL")
                 {
                     mi.gameObject.GetComponent<midtri>().allowtrigger = true;
                 }
             }
-            if (housetri.Value)
+            if (housetri.Value || Input.GetKeyDown(KeyCode.Alpha2))
             {
                 for (int i = 0; i < 4; i++)
                 {
@@ -172,7 +183,7 @@ public class valuerecueve : NetworkBehaviour
         }
 
 
-        if (Input.GetKeyDown(KeyCode.Alpha6))
+        if (Input.GetKeyDown(KeyCode.Alpha6) || fishmantri.Value)
         {
             cam.GetComponent<fishman>().grown = true;
         }
@@ -197,6 +208,7 @@ public class valuerecueve : NetworkBehaviour
     {
         netbool = seeornot.Value;
         nethousebool = housetri.Value;
+        netfishmanbool = fishmantri.Value;
         netint = handRvalue.Value;
         nethandx = handx.Value;
         nethandy = handy.Value;
@@ -206,24 +218,26 @@ public class valuerecueve : NetworkBehaviour
 
     public void ClientInput()
     {
-        if (oldinput != boolvalue || oldhouseinput != housevalue || oldintinput != intvalue || oldintLinput != intLvalue || oldhandx != handxvalue || oldhandy != handyvalue || oldhandz != handzvalue)
+        if (oldinput != boolvalue || oldhouseinput != housevalue || oldfishmaninput != fishmanvalue || oldintinput != intvalue || oldintLinput != intLvalue || oldhandx != handxvalue || oldhandy != handyvalue || oldhandz != handzvalue)
         {
             oldinput = boolvalue;
             oldhouseinput = housevalue;
+            oldfishmaninput = fishmanvalue;
             oldintinput = intvalue;
             oldintLinput = intLvalue;
             oldhandx = handxvalue;
             oldhandy = handyvalue;
             oldhandz = handzvalue;
-            UpdateClientPositionAndRotationServerRpc(boolvalue , housevalue, intvalue , intLvalue, handxvalue, handyvalue, handzvalue);
+            UpdateClientPositionAndRotationServerRpc(boolvalue , housevalue, fishmanvalue ,intvalue , intLvalue, handxvalue, handyvalue, handzvalue);
 
         }
     }
     [ServerRpc]
-    public void UpdateClientPositionAndRotationServerRpc(bool value,bool houseval ,int invalue,int intLvalue, float hx,float hy,float hz)
+    public void UpdateClientPositionAndRotationServerRpc(bool value,bool houseval , bool fishval ,int invalue,int intLvalue, float hx,float hy,float hz)
     {
         seeornot.Value = value;
         housetri.Value = houseval;
+        fishmantri.Value = fishval;
         handRvalue.Value = invalue;
         handLvalue.Value = intLvalue;
         handx.Value = hx;
