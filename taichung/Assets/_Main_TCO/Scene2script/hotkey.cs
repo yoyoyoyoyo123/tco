@@ -13,6 +13,7 @@ public class hotkey : MonoBehaviour
     public int count;
     public int buildcount;
     public GameObject fadeui;
+    public GameObject fish;
     // Start is called before the first frame update
     void Start()
     {
@@ -64,7 +65,7 @@ public class hotkey : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.Alpha5))
         {
-            cam.GetComponent<Animator>().SetBool("move2", true);
+            cam.GetComponent<fishmanager>().trigger = true;
         }
         if (Input.GetKeyDown(KeyCode.Alpha6))
         {
@@ -73,6 +74,13 @@ public class hotkey : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space))
         {
             fadeui.GetComponent<Animator>().enabled = true;
+            fadeui.GetComponent<Animator>().SetBool("fadein", true);
+            fadeui.GetComponent<Animator>().SetBool("fadeout", false);
+        }
+        if (Input.GetKeyDown(KeyCode.N))
+        {
+            fadeui.GetComponent<Animator>().SetBool("fadeout",true);
+            fadeui.GetComponent<Animator>().SetBool("fadein", false);
         }
     }
 }

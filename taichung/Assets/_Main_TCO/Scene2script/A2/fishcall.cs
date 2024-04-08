@@ -13,7 +13,7 @@ public class fishcall : MonoBehaviour
         if (trigger)
         {
             this.GetComponent<Animator>().SetBool("walk", true);
-            Destroy(this.gameObject, 13);
+            Destroy(this.gameObject, 6.5f);
         }
         
     }

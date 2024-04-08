@@ -31,6 +31,9 @@ public class fishman : MonoBehaviour
     public GameObject pinky;
     public GameObject ui;
     public GameObject fishpri;
+
+    public float disabletime;
+    public float disableruntime;
     private void Start()
     {
         fishmanflok.SetActive(true);
@@ -54,6 +57,7 @@ public class fishman : MonoBehaviour
         }
         else
         {
+            
             for (int i = 0; i < 4; i++)
             {
 
@@ -63,7 +67,7 @@ public class fishman : MonoBehaviour
             {
                 grownspeed -= Time.deltaTime * 0.35f;
             }
-
+            
         }
 
         if(fishmanflok.transform.position.z >= 9.4f)
@@ -90,8 +94,11 @@ public class fishman : MonoBehaviour
                 runtime = holdtime;
             }
             runtime += Time.deltaTime;
-
-
+            if(disableruntime >= disabletime)
+            {
+                fishmanflok.SetActive(false);
+            }
+            disableruntime += Time.deltaTime;
         }
         //visualEffect.SetFloat("Particle Edge", -shininess );
         beman.SetFloat("_cutedge", grownspeed);

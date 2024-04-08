@@ -11,7 +11,7 @@ public class fishmanager : MonoBehaviour
     public float colddowntime;
     public float runtime;
     public bool trigger;
-    
+    public bool fishtrigger;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,15 +25,19 @@ public class fishmanager : MonoBehaviour
     {
         if(runtime >= colddowntime)
         {
-            if ( trigger)
-            {
+            fishtrigger = true;
+            runtime = colddowntime;
+        }
 
+        runtime += Time.deltaTime;
+        if (fishtrigger)
+        {
+            if (trigger)
+            {
                 this.GetComponent<Animator>().SetBool("move2", true);
             }
-            
         }
-        runtime = colddowntime;
-
+        
     }
     public void fishmanon()
     {

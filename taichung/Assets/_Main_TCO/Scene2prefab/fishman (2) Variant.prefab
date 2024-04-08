@@ -1221,7 +1221,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fishmanager: {fileID: 0}
-  humanspeed: 1.5
+  humanspeed: 2.1
+  trigger: 0
 --- !u!4 &7150313616245891269 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4829180875418482789, guid: 3920b330c136ef047967deb7dbd2a02b, type: 3}
