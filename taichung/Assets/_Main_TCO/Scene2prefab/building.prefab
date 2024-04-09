@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3806592953672284867}
   - component: {fileID: 9049313448996901448}
   - component: {fileID: 6731292020979790385}
+  - component: {fileID: -3995988929537249871}
   m_Layer: 0
   m_Name: building
   m_TagString: building
@@ -29,8 +30,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4762130590997798158}
   m_LocalRotation: {x: -0, y: 0.7071068, z: 0.7071068, w: 0}
-  m_LocalPosition: {x: -0.5278738, y: -0.37847555, z: -2.908286}
-  m_LocalScale: {x: 0.23102, y: 0.19482619, z: 0.047966536}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 3.080861, y: 3.080861, z: 0.9898422}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -149,3 +150,16 @@ MonoBehaviour:
   number: 0
   crabman: {fileID: 0}
   timer: 0
+--- !u!65 &-3995988929537249871
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4762130590997798158}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.31106055, y: 0.33989045, z: 0.9703892}
+  m_Center: {x: -0.018272737, y: 0.021707749, z: 0.48519444}

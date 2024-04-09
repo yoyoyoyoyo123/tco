@@ -12,66 +12,54 @@ public class crabmove : MonoBehaviour
     public GameObject midfinger;
     public float duration = 3f;
     public bool one;
-    public float timer = 0f;
-    
+    public GameObject VRheadset;
+    public int crabcount;
     // Start is called before the first frame update
     void Start()
     {
         midfinger = GameObject.Find("midfingerL");
-
+        crabcount = -1;
+        VRheadset = GameObject.FindGameObjectWithTag("headset");
     }
 
     // Update is called once per frame
     void Update()
     {
-        crabs = GameObject.FindGameObjectsWithTag("crab");
-
-        buildings = GameObject.FindGameObjectsWithTag("buildinglo");
        
 
 
         if (move)
         {
-            if(crabs[0] != null)
-            {
-                //crabs[0].transform.localScale = Vector3.Lerp(crabs[0].transform.localScale, new Vector3(2.354562f, 2.354562f, 2.354562f), timer * 0.0004f);
-            }
-            if (crabs[1] != null)
-            {
-                //crabs[1].transform.localScale = Vector3.Lerp(crabs[0].transform.localScale, new Vector3(2.354562f, 2.354562f, 2.354562f), timer * 0.0004f);
-            }
-            if (crabs[2] != null)
-            {
-                //crabs[2].transform.localScale = Vector3.Lerp(crabs[0].transform.localScale, new Vector3(2.354562f, 2.354562f, 2.354562f), timer * 0.0004f);
-            }
-            if (crabs[3] != null)
-            {
-                //crabs[3].transform.localScale = Vector3.Lerp(crabs[0].transform.localScale, new Vector3(2.354562f, 2.354562f, 2.354562f), timer * 0.0004f);
-            }
-
-            timer += Time.deltaTime;
+            /*
             for (int i = 0; i < crabs.Length; i++)
             {
-
-                //crabs[i].transform.rotation = Quaternion.Lerp(crabs[i].transform.rotation, Quaternion.Euler(90, 0, 90), 0.04f);
-                //timer += Time.deltaTime;
                 crabs[i].GetComponent<Animator>().enabled = true;
                 crabs[i].GetComponent<Animator>().SetBool("becomehouse", true);
-        
                 midfinger.GetComponent<midtri>().allowtrigger = true;
             }
-
+            */
+            this.gameObject.tag = "crabsed";
+            this.GetComponent<Animator>().enabled = true;
+            this.GetComponent<Animator>().SetBool("becomehouse", true);
+            
             if (runtime >= timemove)
+                
             {
+                this.transform.position = Vector3.MoveTowards(this.transform.position, VRheadset.transform.position, 0.03f);
+                /*
                 for (int i = 0; i < crabs.Length; i++)
                 {
-
-                    crabs[i].transform.position = Vector3.MoveTowards(crabs[i].transform.position, buildings[0].transform.position, 0.05f);
+                    crabs[i].transform.position = Vector3.MoveTowards(crabs[i].transform.position,VRheadset.transform.position, 0.05f);
                 }
-               
-                runtime = timemove;
+                
+                */                     
+                
             }
             runtime += Time.deltaTime;
+        }
+        else
+        {
+            runtime = 0;
         }
         
 

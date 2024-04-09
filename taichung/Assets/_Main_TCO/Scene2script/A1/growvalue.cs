@@ -46,7 +46,7 @@ public class growvalue : MonoBehaviour
 
         if (grow)
         {
-            this.transform.localScale = Vector3.Lerp(this.transform.localScale, new Vector3(1, 0.84333f, 1), timer * 0.5f);
+            this.transform.localScale = Vector3.Lerp(this.transform.localScale, new Vector3(3.080861f, 3.080861f, 3.080861f), timer * 0.5f);
             timer += Time.deltaTime;
         }
 

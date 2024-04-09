@@ -23,6 +23,8 @@ TagManager:
   - fishman
   - pinky
   - start
+  - headset
+  - crabsed
   layers:
   - Default
   - TransparentFX

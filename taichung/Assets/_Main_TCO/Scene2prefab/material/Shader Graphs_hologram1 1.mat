@@ -41,7 +41,7 @@ Material:
     - _Float: -0.1
     - _QueueControl: 0
     - _QueueOffset: 0
-    - _cut: -0.66
+    - _cut: 1.55
     - _speed: 0.01
     m_Colors:
     - _Color: {r: 0.051886775, g: 0.50183904, b: 1, a: 1}

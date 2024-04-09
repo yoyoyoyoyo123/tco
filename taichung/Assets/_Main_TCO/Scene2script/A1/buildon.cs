@@ -28,14 +28,14 @@ public class buildon : MonoBehaviour
     }
     public void buildinghideoff()
     {
-       
+        Destroy(this.gameObject,1);
     }
 
     public void buildingup()
     {
-        //GameObject buildings1 =  Instantiate(building, new Vector3(i * 2.0f, 0, 0), new Vector3(-90,0,0));
-        //buildings1.GetComponent<growvalue>().up = true;
+        GameObject buildings1 =  Instantiate(building, this.transform.position, Quaternion.Euler(-90f, 0f, 0f));
+        buildings1.GetComponent<growvalue>().up = true;
 
-        buildings[0].GetComponent<growvalue>().up = true;
+        //buildings[0].GetComponent<growvalue>().up = true;
     }
 }
