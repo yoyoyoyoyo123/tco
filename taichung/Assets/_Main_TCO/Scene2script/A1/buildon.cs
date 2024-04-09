@@ -10,12 +10,12 @@ public class buildon : MonoBehaviour
 
     public GameObject[] crab;
     public bool one;
-   
+    
     // Start is called before the first frame update
     void Start()
     {
-        building = GameObject.FindGameObjectWithTag("build");
-        buildings = GameObject.FindGameObjectsWithTag("building");
+        
+        
         buildingposition = GameObject.FindGameObjectsWithTag("buildinglo");
     }
 
@@ -23,21 +23,19 @@ public class buildon : MonoBehaviour
     void Update()
     {
         crab = GameObject.FindGameObjectsWithTag("crab");
-        
+        buildings = GameObject.FindGameObjectsWithTag("building");
 
     }
     public void buildinghideoff()
     {
-        building.gameObject.GetComponent<buildingmanger>().enabled = true;
+       
     }
 
     public void buildingup()
     {
-        for (int i = 0; i < 4; i++)
-        {
-            buildings[i].GetComponent<growvalue>().up = true;
+        //GameObject buildings1 =  Instantiate(building, new Vector3(i * 2.0f, 0, 0), new Vector3(-90,0,0));
+        //buildings1.GetComponent<growvalue>().up = true;
 
-        }
-        
+        buildings[0].GetComponent<growvalue>().up = true;
     }
 }

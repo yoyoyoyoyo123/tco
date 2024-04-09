@@ -50,7 +50,7 @@ public class crabmove : MonoBehaviour
             }
 
             timer += Time.deltaTime;
-            for (int i = 0; i < 4; i++)
+            for (int i = 0; i < crabs.Length; i++)
             {
 
                 //crabs[i].transform.rotation = Quaternion.Lerp(crabs[i].transform.rotation, Quaternion.Euler(90, 0, 90), 0.04f);
@@ -63,10 +63,10 @@ public class crabmove : MonoBehaviour
 
             if (runtime >= timemove)
             {
-                for (int i = 0; i < 4; i++)
+                for (int i = 0; i < crabs.Length; i++)
                 {
 
-                    crabs[i].transform.position = Vector3.MoveTowards(crabs[i].transform.position, buildings[i].transform.position, 0.05f);
+                    crabs[i].transform.position = Vector3.MoveTowards(crabs[i].transform.position, buildings[0].transform.position, 0.05f);
                 }
                
                 runtime = timemove;
