@@ -8,6 +8,9 @@ public class hotkey : MonoBehaviour
     public GameObject crabposition;
     public GameObject crabmanager;
     public GameObject[] crabs;
+    public GameObject crabb;
+    public bool crabfollow;
+    public bool onetime;
     public int crabcount;
     public GameObject headset;
     public GameObject raycast;
@@ -15,6 +18,10 @@ public class hotkey : MonoBehaviour
     public GameObject maincamera;
     public GameObject fadeui;
     private int lookcount;
+    public GameObject Rvfx;
+    public GameObject Lvfx;
+    public int vfxcount;
+    public GameObject mainncamera;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,13 +34,36 @@ public class hotkey : MonoBehaviour
         crabs = GameObject.FindGameObjectsWithTag("crab");
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-
-            Instantiate(crab,headset.transform.position , Quaternion.Euler(new Vector3(0, 0, 0)));
+            crabfollow = true;
+            //Instantiate(crab,headset.transform.position , Quaternion.Euler(new Vector3(0, 0, 0)));
             //Instantiate(crab, new Vector3(crabposition.transform.position.x + Random.Range(-4.5f, 4.5f), crabposition.transform.position.y , crabposition.transform.position.z + Random.Range(-2.5f, 2.5f)), Quaternion.Euler(new Vector3(0, 0, 0)));
 
 
         }
+        if (Input.GetKeyUp(KeyCode.Alpha1))
+        {
+            crabfollow = false;
+            //Instantiate(crab,headset.transform.position , Quaternion.Euler(new Vector3(0, 0, 0)));
+            //Instantiate(crab, new Vector3(crabposition.transform.position.x + Random.Range(-4.5f, 4.5f), crabposition.transform.position.y , crabposition.transform.position.z + Random.Range(-2.5f, 2.5f)), Quaternion.Euler(new Vector3(0, 0, 0)));
 
+
+        }
+        if (crabfollow)
+        {
+            if (!onetime)
+            {
+               GameObject crabs = Instantiate(crab, headset.transform.position, Quaternion.Euler(new Vector3(0, 180,180)));
+                crabb = crabs;
+               onetime = true;
+            }
+            crabb.transform.position = Vector3.Lerp(crabb.transform.position, headset.transform.position, 0.05f);
+        }
+        else
+        {
+            onetime = false;
+            crabfollow = false;
+            crabb = null;
+        }
 
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
@@ -41,10 +71,6 @@ public class hotkey : MonoBehaviour
             {
                 VRcam.GetComponent<nearest>().closestEnemy.GetComponent<crabmove>().move = true;
             }
-           
-
-
-
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha3))
@@ -54,8 +80,6 @@ public class hotkey : MonoBehaviour
                 raycast.GetComponent<raycast>().build.GetComponent<growvalue>().grow = true;
             }
             
-
-
         }
         if (Input.GetKeyDown(KeyCode.Alpha4))
         {
@@ -99,7 +123,37 @@ public class hotkey : MonoBehaviour
                 maincamera.GetComponent<lookat>().look = true;
             }
             
-
         }
+        if (Input.GetKeyDown(KeyCode.V))
+        {
+            vfxcount += 1;
+            if(vfxcount > 1)
+            {
+                vfxcount = 0;
+            }
+        }
+        if(vfxcount == 0)
+        {
+            Rvfx.SetActive(true);
+
+            Lvfx.SetActive(true);
+        }
+        if (vfxcount == 1)
+        {
+            Rvfx.SetActive(false);
+
+            Lvfx.SetActive(false);
+        }
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            maincamera.transform.position = new Vector3(0, 1.18f, 5.47f);
+            maincamera.transform.rotation = Quaternion.Euler(185, 0, 180);
+        }
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            maincamera.transform.position = new Vector3(0, 5.57f, -0.32f);
+            maincamera.transform.rotation = Quaternion.Euler(90, 0, 180);
+        }
+
     }
 }

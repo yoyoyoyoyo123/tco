@@ -6002,8 +6002,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR uint32_t Binding_Baselib_RegisteredNetwork_So
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Binding_Baselib_RegisteredNetwork_Socket_UDP_ProcessRecv_Injected_mAC1B7AB0252937854E2E26E2B42B74291F034040 (Baselib_RegisteredNetwork_Socket_UDP_t56202AB2B03941A065A7D8382591DD253115192A* ___socket0, Baselib_ErrorState_t9A3CC4D46155662AAC822300993DA278B19A1D1E* ___errorState1, const RuntimeMethod* method) ;
 // Unity.Baselib.LowLevel.Binding/Baselib_RegisteredNetwork_ProcessStatus Unity.Baselib.LowLevel.Binding::Baselib_RegisteredNetwork_Socket_UDP_ProcessSend_Injected(Unity.Baselib.LowLevel.Binding/Baselib_RegisteredNetwork_Socket_UDP&,Unity.Baselib.LowLevel.Binding/Baselib_ErrorState*)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Binding_Baselib_RegisteredNetwork_Socket_UDP_ProcessSend_Injected_m379416305074330A686AB72537BA832642ACD6CF (Baselib_RegisteredNetwork_Socket_UDP_t56202AB2B03941A065A7D8382591DD253115192A* ___socket0, Baselib_ErrorState_t9A3CC4D46155662AAC822300993DA278B19A1D1E* ___errorState1, const RuntimeMethod* method) ;
-// Unity.Baselib.LowLevel.Binding/Baselib_RegisteredNetwork_CompletionQueueStatus Unity.Baselib.LowLevel.Binding::Baselib_RegisteredNetwork_Socket_UDP_WaitForCompletedSend_Injected(Unity.Baselib.LowLevel.Binding/Baselib_RegisteredNetwork_Socket_UDP&,System.UInt32,Unity.Baselib.LowLevel.Binding/Baselib_ErrorState*)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Binding_Baselib_RegisteredNetwork_Socket_UDP_WaitForCompletedSend_Injected_m42232EE60CA56DEC9EED050441289DFD045204F5 (Baselib_RegisteredNetwork_Socket_UDP_t56202AB2B03941A065A7D8382591DD253115192A* ___socket0, uint32_t ___timeoutInMilliseconds1, Baselib_ErrorState_t9A3CC4D46155662AAC822300993DA278B19A1D1E* ___errorState2, const RuntimeMethod* method) ;
 // System.UInt32 Unity.Baselib.LowLevel.Binding::Baselib_RegisteredNetwork_Socket_UDP_DequeueRecv_Injected(Unity.Baselib.LowLevel.Binding/Baselib_RegisteredNetwork_Socket_UDP&,Unity.Baselib.LowLevel.Binding/Baselib_RegisteredNetwork_CompletionResult*,System.UInt32,Unity.Baselib.LowLevel.Binding/Baselib_ErrorState*)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR uint32_t Binding_Baselib_RegisteredNetwork_Socket_UDP_DequeueRecv_Injected_m94233B006B1A8D583294FA184C822CC22CD44D07 (Baselib_RegisteredNetwork_Socket_UDP_t56202AB2B03941A065A7D8382591DD253115192A* ___socket0, Baselib_RegisteredNetwork_CompletionResult_t4C07F67F2F155FE19DBE7A41393038A154301CC7* ___results1, uint32_t ___resultsCount2, Baselib_ErrorState_t9A3CC4D46155662AAC822300993DA278B19A1D1E* ___errorState3, const RuntimeMethod* method) ;
 // System.UInt32 Unity.Baselib.LowLevel.Binding::Baselib_RegisteredNetwork_Socket_UDP_DequeueSend_Injected(Unity.Baselib.LowLevel.Binding/Baselib_RegisteredNetwork_Socket_UDP&,Unity.Baselib.LowLevel.Binding/Baselib_RegisteredNetwork_CompletionResult*,System.UInt32,Unity.Baselib.LowLevel.Binding/Baselib_ErrorState*)
@@ -7582,6 +7580,8 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Random_get_state_Injected_m0EF69EA03F647
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Random_set_state_Injected_mD2DFB0EB9291E60450E97EA93BF1AAAD8A8BD218 (State_tA37EB68FE687D41D4B228462D4C7427FAC5BF9C1* ___value0, const RuntimeMethod* method) ;
 // System.Int32 UnityEngine.Random::RandomRangeInt(System.Int32,System.Int32)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Random_RandomRangeInt_mB4B20C7368BBE6060007CB759C4C54B43BA29A37 (int32_t ___minInclusive0, int32_t ___maxExclusive1, const RuntimeMethod* method) ;
+// System.Void UnityEngine.Random::get_insideUnitSphere_Injected(UnityEngine.Vector3&)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Random_get_insideUnitSphere_Injected_m9E72CC0B2F5B42C37400AD1BA5658A6F939EF01E (Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2* ___ret0, const RuntimeMethod* method) ;
 // UnityEngine.Color UnityEngine.Random::ColorHSV(System.Single,System.Single,System.Single,System.Single,System.Single,System.Single,System.Single,System.Single)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Color_tD001788D726C3A7F1379BEED0260B9591F440C1F Random_ColorHSV_m6C504C23EE8A50AAC821E069F2BDFA43456E2939 (float ___hueMin0, float ___hueMax1, float ___saturationMin2, float ___saturationMax3, float ___valueMin4, float ___valueMax5, float ___alphaMin6, float ___alphaMax7, const RuntimeMethod* method) ;
 // System.Single UnityEngine.Random::get_value()
@@ -8386,24 +8386,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Binding_Baselib_RegisteredNetwork_Soc
 		return L_1;
 	}
 }
-// Unity.Baselib.LowLevel.Binding/Baselib_RegisteredNetwork_CompletionQueueStatus Unity.Baselib.LowLevel.Binding::Baselib_RegisteredNetwork_Socket_UDP_WaitForCompletedSend(Unity.Baselib.LowLevel.Binding/Baselib_RegisteredNetwork_Socket_UDP,System.UInt32,Unity.Baselib.LowLevel.Binding/Baselib_ErrorState*)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Binding_Baselib_RegisteredNetwork_Socket_UDP_WaitForCompletedSend_mBA5A9410B5AAEB5CB4A55A763D6EAD2785C4BCF3 (Baselib_RegisteredNetwork_Socket_UDP_t56202AB2B03941A065A7D8382591DD253115192A ___socket0, uint32_t ___timeoutInMilliseconds1, Baselib_ErrorState_t9A3CC4D46155662AAC822300993DA278B19A1D1E* ___errorState2, const RuntimeMethod* method) 
-{
-	static bool s_Il2CppMethodInitialized;
-	if (!s_Il2CppMethodInitialized)
-	{
-		il2cpp_codegen_initialize_runtime_metadata((uintptr_t*)&Binding_t9FFB66AA6F41683009CB6662F11182C9E77B139F_il2cpp_TypeInfo_var);
-		s_Il2CppMethodInitialized = true;
-	}
-	{
-		uint32_t L_0 = ___timeoutInMilliseconds1;
-		Baselib_ErrorState_t9A3CC4D46155662AAC822300993DA278B19A1D1E* L_1 = ___errorState2;
-		il2cpp_codegen_runtime_class_init_inline(Binding_t9FFB66AA6F41683009CB6662F11182C9E77B139F_il2cpp_TypeInfo_var);
-		int32_t L_2;
-		L_2 = Binding_Baselib_RegisteredNetwork_Socket_UDP_WaitForCompletedSend_Injected_m42232EE60CA56DEC9EED050441289DFD045204F5((&___socket0), L_0, L_1, NULL);
-		return L_2;
-	}
-}
 // System.UInt32 Unity.Baselib.LowLevel.Binding::Baselib_RegisteredNetwork_Socket_UDP_DequeueRecv(Unity.Baselib.LowLevel.Binding/Baselib_RegisteredNetwork_Socket_UDP,Unity.Baselib.LowLevel.Binding/Baselib_RegisteredNetwork_CompletionResult*,System.UInt32,Unity.Baselib.LowLevel.Binding/Baselib_ErrorState*)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR uint32_t Binding_Baselib_RegisteredNetwork_Socket_UDP_DequeueRecv_mA6CD5A055A39B06201561525A1F2B9B89D6F6340 (Baselib_RegisteredNetwork_Socket_UDP_t56202AB2B03941A065A7D8382591DD253115192A ___socket0, Baselib_RegisteredNetwork_CompletionResult_t4C07F67F2F155FE19DBE7A41393038A154301CC7* ___results1, uint32_t ___resultsCount2, Baselib_ErrorState_t9A3CC4D46155662AAC822300993DA278B19A1D1E* ___errorState3, const RuntimeMethod* method) 
 {
@@ -8547,15 +8529,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Binding_Baselib_Socket_Close_m6F352DABFD
 		Binding_Baselib_Socket_Close_Injected_m091D10B28C73700C15ED2B86D50565AC27D36FC4((&___socket0), NULL);
 		return;
 	}
-}
-// System.Void Unity.Baselib.LowLevel.Binding::Baselib_Thread_YieldExecution()
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Binding_Baselib_Thread_YieldExecution_mDB87BB4910A0C40F4ED6B2F2A6ACEEF470C1B14B (const RuntimeMethod* method) 
-{
-	typedef void (*Binding_Baselib_Thread_YieldExecution_mDB87BB4910A0C40F4ED6B2F2A6ACEEF470C1B14B_ftn) ();
-	static Binding_Baselib_Thread_YieldExecution_mDB87BB4910A0C40F4ED6B2F2A6ACEEF470C1B14B_ftn _il2cpp_icall_func;
-	if (!_il2cpp_icall_func)
-	_il2cpp_icall_func = (Binding_Baselib_Thread_YieldExecution_mDB87BB4910A0C40F4ED6B2F2A6ACEEF470C1B14B_ftn)il2cpp_codegen_resolve_icall ("Unity.Baselib.LowLevel.Binding::Baselib_Thread_YieldExecution()");
-	_il2cpp_icall_func();
 }
 // System.Void Unity.Baselib.LowLevel.Binding::.cctor()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Binding__cctor_m939ED74C0A0A794D89ADABD00A8B9A259FCEE7A6 (const RuntimeMethod* method) 
@@ -8730,16 +8703,6 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Binding_Baselib_RegisteredNetwork_Soc
 	if (!_il2cpp_icall_func)
 	_il2cpp_icall_func = (Binding_Baselib_RegisteredNetwork_Socket_UDP_ProcessSend_Injected_m379416305074330A686AB72537BA832642ACD6CF_ftn)il2cpp_codegen_resolve_icall ("Unity.Baselib.LowLevel.Binding::Baselib_RegisteredNetwork_Socket_UDP_ProcessSend_Injected(Unity.Baselib.LowLevel.Binding/Baselib_RegisteredNetwork_Socket_UDP&,Unity.Baselib.LowLevel.Binding/Baselib_ErrorState*)");
 	int32_t icallRetVal = _il2cpp_icall_func(___socket0, ___errorState1);
-	return icallRetVal;
-}
-// Unity.Baselib.LowLevel.Binding/Baselib_RegisteredNetwork_CompletionQueueStatus Unity.Baselib.LowLevel.Binding::Baselib_RegisteredNetwork_Socket_UDP_WaitForCompletedSend_Injected(Unity.Baselib.LowLevel.Binding/Baselib_RegisteredNetwork_Socket_UDP&,System.UInt32,Unity.Baselib.LowLevel.Binding/Baselib_ErrorState*)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Binding_Baselib_RegisteredNetwork_Socket_UDP_WaitForCompletedSend_Injected_m42232EE60CA56DEC9EED050441289DFD045204F5 (Baselib_RegisteredNetwork_Socket_UDP_t56202AB2B03941A065A7D8382591DD253115192A* ___socket0, uint32_t ___timeoutInMilliseconds1, Baselib_ErrorState_t9A3CC4D46155662AAC822300993DA278B19A1D1E* ___errorState2, const RuntimeMethod* method) 
-{
-	typedef int32_t (*Binding_Baselib_RegisteredNetwork_Socket_UDP_WaitForCompletedSend_Injected_m42232EE60CA56DEC9EED050441289DFD045204F5_ftn) (Baselib_RegisteredNetwork_Socket_UDP_t56202AB2B03941A065A7D8382591DD253115192A*, uint32_t, Baselib_ErrorState_t9A3CC4D46155662AAC822300993DA278B19A1D1E*);
-	static Binding_Baselib_RegisteredNetwork_Socket_UDP_WaitForCompletedSend_Injected_m42232EE60CA56DEC9EED050441289DFD045204F5_ftn _il2cpp_icall_func;
-	if (!_il2cpp_icall_func)
-	_il2cpp_icall_func = (Binding_Baselib_RegisteredNetwork_Socket_UDP_WaitForCompletedSend_Injected_m42232EE60CA56DEC9EED050441289DFD045204F5_ftn)il2cpp_codegen_resolve_icall ("Unity.Baselib.LowLevel.Binding::Baselib_RegisteredNetwork_Socket_UDP_WaitForCompletedSend_Injected(Unity.Baselib.LowLevel.Binding/Baselib_RegisteredNetwork_Socket_UDP&,System.UInt32,Unity.Baselib.LowLevel.Binding/Baselib_ErrorState*)");
-	int32_t icallRetVal = _il2cpp_icall_func(___socket0, ___timeoutInMilliseconds1, ___errorState2);
 	return icallRetVal;
 }
 // System.UInt32 Unity.Baselib.LowLevel.Binding::Baselib_RegisteredNetwork_Socket_UDP_DequeueRecv_Injected(Unity.Baselib.LowLevel.Binding/Baselib_RegisteredNetwork_Socket_UDP&,Unity.Baselib.LowLevel.Binding/Baselib_RegisteredNetwork_CompletionResult*,System.UInt32,Unity.Baselib.LowLevel.Binding/Baselib_ErrorState*)
@@ -34638,6 +34601,17 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR float Random_get_value_m2CEA87FADF5222EF9E13D
 	float icallRetVal = _il2cpp_icall_func();
 	return icallRetVal;
 }
+// UnityEngine.Vector3 UnityEngine.Random::get_insideUnitSphere()
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 Random_get_insideUnitSphere_mA488D6859560B73565B8D890ED6B39DB4091C54F (const RuntimeMethod* method) 
+{
+	Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 V_0;
+	memset((&V_0), 0, sizeof(V_0));
+	{
+		Random_get_insideUnitSphere_Injected_m9E72CC0B2F5B42C37400AD1BA5658A6F939EF01E((&V_0), NULL);
+		Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2 L_0 = V_0;
+		return L_0;
+	}
+}
 // UnityEngine.Color UnityEngine.Random::ColorHSV()
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR Color_tD001788D726C3A7F1379BEED0260B9591F440C1F Random_ColorHSV_m8230B38CA1270C88D762AC4FF1096D8326F5DCEA (const RuntimeMethod* method) 
 {
@@ -34729,6 +34703,15 @@ IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Random_set_state_Injected_mD2DFB0EB9291E
 	if (!_il2cpp_icall_func)
 	_il2cpp_icall_func = (Random_set_state_Injected_mD2DFB0EB9291E60450E97EA93BF1AAAD8A8BD218_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Random::set_state_Injected(UnityEngine.Random/State&)");
 	_il2cpp_icall_func(___value0);
+}
+// System.Void UnityEngine.Random::get_insideUnitSphere_Injected(UnityEngine.Vector3&)
+IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR void Random_get_insideUnitSphere_Injected_m9E72CC0B2F5B42C37400AD1BA5658A6F939EF01E (Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2* ___ret0, const RuntimeMethod* method) 
+{
+	typedef void (*Random_get_insideUnitSphere_Injected_m9E72CC0B2F5B42C37400AD1BA5658A6F939EF01E_ftn) (Vector3_t24C512C7B96BBABAD472002D0BA2BDA40A5A80B2*);
+	static Random_get_insideUnitSphere_Injected_m9E72CC0B2F5B42C37400AD1BA5658A6F939EF01E_ftn _il2cpp_icall_func;
+	if (!_il2cpp_icall_func)
+	_il2cpp_icall_func = (Random_get_insideUnitSphere_Injected_m9E72CC0B2F5B42C37400AD1BA5658A6F939EF01E_ftn)il2cpp_codegen_resolve_icall ("UnityEngine.Random::get_insideUnitSphere_Injected(UnityEngine.Vector3&)");
+	_il2cpp_icall_func(___ret0);
 }
 #ifdef __clang__
 #pragma clang diagnostic pop

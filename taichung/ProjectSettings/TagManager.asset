@@ -25,6 +25,11 @@ TagManager:
   - start
   - headset
   - crabsed
+  - Rhand
+  - VRcam
+  - Rray
+  - Lray
+  - uiman
   layers:
   - Default
   - TransparentFX
@@ -37,7 +42,7 @@ TagManager:
   - target
   - wall
   - build
-  - 
+  - VFX
   - 
   - 
   - 

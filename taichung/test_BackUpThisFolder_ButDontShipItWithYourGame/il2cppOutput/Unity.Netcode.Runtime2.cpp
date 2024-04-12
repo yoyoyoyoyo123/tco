@@ -1805,13 +1805,6 @@ struct Nullable_1_tF8BFF19FF240C9F0A45168187CD7106BAA146A99
 	uint64_t ___value_1;
 };
 
-// Unity.Burst.SharedStatic`1<System.Int32>
-struct SharedStatic_1_t91D24BF9DAB0EDD81AA3013F2C4CBD0A98040667 
-{
-	// System.Void* Unity.Burst.SharedStatic`1::_buffer
-	void* ____buffer_0;
-};
-
 // System.Boolean
 struct Boolean_t09A6377A54BE2F9E6985A8149F19234FD7DDFE22 
 {
@@ -3719,15 +3712,9 @@ struct DataStreamReader_t712DF6CE1A53094AE623CCA3F3DFC7B73E3C50B3
 struct DataStreamWriter_t58BB6BA9D4C598E54C1B1E6D5B7511625C8EF6EA 
 {
 	// Unity.Networking.Transport.DataStreamWriter/StreamData Unity.Networking.Transport.DataStreamWriter::m_Data
-	StreamData_tF9752A5347148C4C2FD2C07D204FABE9539D1E94 ___m_Data_1;
+	StreamData_tF9752A5347148C4C2FD2C07D204FABE9539D1E94 ___m_Data_0;
 	// System.IntPtr Unity.Networking.Transport.DataStreamWriter::m_SendHandleData
-	intptr_t ___m_SendHandleData_2;
-};
-
-struct DataStreamWriter_t58BB6BA9D4C598E54C1B1E6D5B7511625C8EF6EA_StaticFields
-{
-	// Unity.Burst.SharedStatic`1<System.Int32> Unity.Networking.Transport.DataStreamWriter::m_IsLittleEndian
-	SharedStatic_1_t91D24BF9DAB0EDD81AA3013F2C4CBD0A98040667 ___m_IsLittleEndian_0;
+	intptr_t ___m_SendHandleData_1;
 };
 
 // System.Delegate

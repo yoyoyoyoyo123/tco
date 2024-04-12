@@ -14,6 +14,9 @@ public class crabmove : MonoBehaviour
     public bool one;
     public GameObject VRheadset;
     public int crabcount;
+
+    public bool onrtime;
+    public Vector3 headsetposition;
     // Start is called before the first frame update
     void Start()
     {
@@ -41,11 +44,17 @@ public class crabmove : MonoBehaviour
             this.gameObject.tag = "crabsed";
             this.GetComponent<Animator>().enabled = true;
             this.GetComponent<Animator>().SetBool("becomehouse", true);
+            if (one)
+            {
+                headsetposition = new Vector3(VRheadset.transform.position.x, 0, VRheadset.transform.position.z);
+                one = false;
+            }
             
             if (runtime >= timemove)
                 
             {
-                this.transform.position = Vector3.MoveTowards(this.transform.position, VRheadset.transform.position, 0.03f);
+                
+                this.transform.position = Vector3.MoveTowards(this.transform.position, headsetposition, 0.03f);
                 /*
                 for (int i = 0; i < crabs.Length; i++)
                 {
@@ -60,6 +69,7 @@ public class crabmove : MonoBehaviour
         else
         {
             runtime = 0;
+            one = true;
         }
         
 

@@ -34,7 +34,7 @@ public class nearest : MonoBehaviour
         foreach (var enemy in allEnemies)
         {
 
-            float distanceHere = Vector3.Distance(transform.position, enemy.transform.position);
+            float distanceHere = Vector3.Distance(new Vector3(transform.position.x,0, transform.position.z) , new Vector3(enemy.transform.position.x,0, enemy.transform.position.z));
             if (distanceHere <=  leastDistance)
             {
                 leastDistance = distanceHere;

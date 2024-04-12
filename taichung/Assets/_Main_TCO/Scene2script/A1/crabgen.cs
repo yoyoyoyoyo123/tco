@@ -27,8 +27,7 @@ public class crabgen : MonoBehaviour
             {
                 if (onetimetrigger == false)
                 {
-                    players[1].GetComponent<valuerecueve>().boolvalue = true;
-                    Debug.Log("gcrab");
+                    players[1].GetComponent<valuerecueve>().boolvalue = true;                 
                     onetimetrigger = true;
                 }
                 runtime = time;

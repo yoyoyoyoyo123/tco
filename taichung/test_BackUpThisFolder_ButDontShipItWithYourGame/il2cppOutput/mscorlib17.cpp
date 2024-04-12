@@ -13322,37 +13322,6 @@ IL_0012:
 		return L_7;
 	}
 }
-// System.Int64 System.Runtime.InteropServices.Marshal::ReadInt64(System.IntPtr,System.Int32)
-IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int64_t Marshal_ReadInt64_m27A281592D414C45CF25C9EB0C378310A2DFBE86 (intptr_t ___ptr0, int32_t ___ofs1, const RuntimeMethod* method) 
-{
-	uint8_t* V_0 = NULL;
-	int64_t V_1 = 0;
-	{
-		intptr_t L_0 = ___ptr0;
-		void* L_1;
-		L_1 = IntPtr_op_Explicit_m2728CBA081E79B97DDCF1D4FAD77B309CA1E94BF(L_0, NULL);
-		int32_t L_2 = ___ofs1;
-		V_0 = (uint8_t*)((void*)il2cpp_codegen_add((intptr_t)L_1, L_2));
-		uint8_t* L_3 = V_0;
-		if (((int32_t)(((int32_t)(uint32_t)(intptr_t)L_3)&7)))
-		{
-			goto IL_0012;
-		}
-	}
-	{
-		uint8_t* L_4 = V_0;
-		int64_t L_5 = *((int64_t*)L_4);
-		return L_5;
-	}
-
-IL_0012:
-	{
-		uint8_t* L_6 = V_0;
-		Buffer_Memcpy_mB203712DD2D0E5DF1CF52F752638F8B94E03E217((uint8_t*)((uintptr_t)(&V_1)), L_6, 8, (bool)1, NULL);
-		int64_t L_7 = V_1;
-		return L_7;
-	}
-}
 // System.Int32 System.Runtime.InteropServices.Marshal::SizeOf(System.Object)
 IL2CPP_EXTERN_C IL2CPP_METHOD_ATTR int32_t Marshal_SizeOf_m596657DAE86DB62FCC24730A3A6FB0F19B4C6B2E (RuntimeObject* ___structure0, const RuntimeMethod* method) 
 {

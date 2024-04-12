@@ -67,15 +67,41 @@ MonoBehaviour:
     m_InternalValue: 0
   housetri:
     m_InternalValue: 0
+  fishmantri:
+    m_InternalValue: 0
   handRvalue:
     m_InternalValue: 0
   handLvalue:
     m_InternalValue: 0
-  handx:
+  handRx:
     m_InternalValue: 0
-  handy:
+  handRy:
     m_InternalValue: 0
-  handz:
+  handRz:
+    m_InternalValue: 0
+  handLx:
+    m_InternalValue: 0
+  handLy:
+    m_InternalValue: 0
+  handLz:
+    m_InternalValue: 0
+  headx:
+    m_InternalValue: 0
+  heady:
+    m_InternalValue: 0
+  headz:
+    m_InternalValue: 0
+  handRrox:
+    m_InternalValue: 0
+  handRroy:
+    m_InternalValue: 0
+  handRroz:
+    m_InternalValue: 0
+  handLrox:
+    m_InternalValue: 0
+  handLroy:
+    m_InternalValue: 0
+  handLroz:
     m_InternalValue: 0
   center: []
   centerarray: []
@@ -83,35 +109,85 @@ MonoBehaviour:
   onetime2: 0
   boolvalue: 0
   housevalue: 0
+  fishmanvalue: 0
   intvalue: 0
   intLvalue: 0
   ranvalue: 0
-  handxvalue: 0
-  handyvalue: 0
-  handzvalue: 0
+  handRxvalue: 0
+  handRyvalue: 0
+  handRzvalue: 0
+  handLxvalue: 0
+  handLyvalue: 0
+  handLzvalue: 0
+  headxvalue: 0
+  headyvalue: 0
+  headzvalue: 0
+  handRroxvalue: 0
+  handRroyvalue: 0
+  handRrozvalue: 0
+  handLroxvalue: 0
+  handLroyvalue: 0
+  handLrozvalue: 0
   netbool: 0
   nethousebool: 0
-  nethandx: 0
-  nethandy: 0
-  nethandz: 0
+  netfishmanbool: 0
+  nethandRx: 0
+  nethandRy: 0
+  nethandRz: 0
+  nethandLx: 0
+  nethandLy: 0
+  nethandLz: 0
+  netheadx: 0
+  netheady: 0
+  netheadz: 0
+  nethandRrox: 0
+  nethandRroy: 0
+  nethandRroz: 0
+  nethandLrox: 0
+  nethandLroy: 0
+  nethandLroz: 0
   netint: 0
   netLint: 0
   oldinput: 0
   oldhouseinput: 0
+  oldfishmaninput: 0
   oldintinput: 0
   oldintLinput: 0
-  oldhandx: 0
-  oldhandy: 0
-  oldhandz: 0
+  oldhandRx: 0
+  oldhandRy: 0
+  oldhandRz: 0
+  oldhandLx: 0
+  oldhandLy: 0
+  oldhandLz: 0
+  oldheadx: 0
+  oldheady: 0
+  oldheadz: 0
+  oldhandRrox: 0
+  oldhandRroy: 0
+  oldhandRroz: 0
+  oldhandLrox: 0
+  oldhandLroy: 0
+  oldhandLroz: 0
   building: {fileID: 0}
-  hand: {fileID: 0}
-  crab: {fileID: 2402101365212537563, guid: 9daab7a8d3544934398c448ea502ae5e, type: 3}
+  lefthand: {fileID: 0}
+  righthand: {fileID: 0}
+  crab: {fileID: 5539329455881767606, guid: 4a1af3ffd2d25cf4f872540061315f3e, type: 3}
   crabs: []
-  crabsamount: []
+  crabsamount: 0
   onetimetrigger: 0
   crabman: {fileID: 0}
+  crabb: {fileID: 0}
   runtime: 0
   litime: 3
+  countone: 0
+  mid: []
+  cam: {fileID: 0}
+  ui: {fileID: 0}
+  headset: {fileID: 0}
+  Rray: {fileID: 0}
+  Lray: {fileID: 0}
+  buildR: 0
+  buildL: 0
 --- !u!114 &1072218067991891256
 MonoBehaviour:
   m_ObjectHideFlags: 0

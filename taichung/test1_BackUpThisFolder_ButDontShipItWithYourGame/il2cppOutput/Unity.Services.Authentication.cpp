@@ -418,6 +418,8 @@ struct IPlayerId_t6A7BAE55B4D78E87B15B9261828E897BAACBF913;
 struct IProfile_t0DC486F874AA0450CBE9E4F75A5733093B2E76E7;
 // Unity.Services.Core.Configuration.Internal.IProjectConfiguration
 struct IProjectConfiguration_tB5A7516DEB869AD005431EC83C6E02221D2B60D2;
+// Unity.Services.Core.Internal.IServiceRegistry
+struct IServiceRegistry_tDC19B8061DEB2308A93ABB6466DD33837E3FB1BC;
 // Unity.Services.Authentication.Identity
 struct Identity_t0F2459F648B93A730762B444F9012ECFA8BF709F;
 // Unity.Services.Core.InitializationOptions
@@ -1109,10 +1111,18 @@ struct Compatibility_tFA1E59ED80B83C1E7B88589F69BBA1039539E520  : public Runtime
 // Unity.Services.Core.Internal.CoreRegistry
 struct CoreRegistry_t7B61538793CE940CE3A391364C163F1078C9F2BA  : public RuntimeObject
 {
+	// System.String Unity.Services.Core.Internal.CoreRegistry::<InstanceId>k__BackingField
+	String_t* ___U3CInstanceIdU3Ek__BackingField_1;
+	// Unity.Services.Core.ServicesType Unity.Services.Core.Internal.CoreRegistry::<Type>k__BackingField
+	int32_t ___U3CTypeU3Ek__BackingField_2;
+	// Unity.Services.Core.InitializationOptions Unity.Services.Core.Internal.CoreRegistry::<Options>k__BackingField
+	InitializationOptions_t51AA79A729CADA6922543A7A47F1E87A09DBD17A* ___U3COptionsU3Ek__BackingField_3;
 	// Unity.Services.Core.Internal.IPackageRegistry Unity.Services.Core.Internal.CoreRegistry::<PackageRegistry>k__BackingField
-	RuntimeObject* ___U3CPackageRegistryU3Ek__BackingField_1;
+	RuntimeObject* ___U3CPackageRegistryU3Ek__BackingField_4;
 	// Unity.Services.Core.Internal.IComponentRegistry Unity.Services.Core.Internal.CoreRegistry::<ComponentRegistry>k__BackingField
-	RuntimeObject* ___U3CComponentRegistryU3Ek__BackingField_2;
+	RuntimeObject* ___U3CComponentRegistryU3Ek__BackingField_5;
+	// Unity.Services.Core.Internal.IServiceRegistry Unity.Services.Core.Internal.CoreRegistry::<ServiceRegistry>k__BackingField
+	RuntimeObject* ___U3CServiceRegistryU3Ek__BackingField_6;
 };
 
 struct CoreRegistry_t7B61538793CE940CE3A391364C163F1078C9F2BA_StaticFields

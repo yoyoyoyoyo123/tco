@@ -5,7 +5,7 @@ using UnityEngine;
 public class crabfloat : MonoBehaviour
 {
     // 最大推力和旋轉力
-    public float m_Thrust = 3f;
+    public float m_Thrust ;
     public float maxTorque;
 
 
@@ -24,11 +24,15 @@ public class crabfloat : MonoBehaviour
      void Update()
     {
         //ApplyRandomForce();
+        if(this.gameObject.transform.position.y <= 0)
+        {
+            this.gameObject.transform.position = new Vector3(this.gameObject.transform.position.x,0, this.gameObject.transform.position.z);
+        }
     }
 
     void ApplyRandomForce()
     {
-        rb.AddForce(transform.up * -m_Thrust);
+        rb.AddForce(transform.up * m_Thrust);
     }
 
     void ApplyRandomTorque()
