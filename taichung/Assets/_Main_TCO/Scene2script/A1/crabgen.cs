@@ -6,8 +6,10 @@ public class crabgen : MonoBehaviour
 {
     public GameObject gesture;
     public GameObject[] players;
-    public float runtime;
-    public float time;
+    private float holdruntime;
+    public float holdtime;
+    private float colddownruntime;
+    public float colddowntime;
     public bool trigger;
     public bool onetimetrigger;
     // Start is called before the first frame update
@@ -21,19 +23,25 @@ public class crabgen : MonoBehaviour
     void Update()
     {
         players = GameObject.FindGameObjectsWithTag("Player");
-        if (trigger)
+
+        if(colddownruntime >= colddowntime)
         {
-            if(runtime >= time)
+            colddownruntime = colddowntime;
+            if (trigger)
             {
-                if (onetimetrigger == false)
+                if (holdruntime >= holdtime)
                 {
-                    players[1].GetComponent<valuerecueve>().boolvalue = true;                 
-                    onetimetrigger = true;
+                    if (onetimetrigger == false)
+                    {
+                        players[1].GetComponent<valuerecueve>().boolvalue = true;
+                        onetimetrigger = true;
+                    }
+                    holdruntime = holdtime;
                 }
-                runtime = time;
+                holdruntime += Time.deltaTime;
             }
-            runtime += Time.deltaTime;
         }
+        colddownruntime += Time.deltaTime;
 
     }
     void OnTriggerEnter(Collider other)
@@ -53,10 +61,10 @@ public class crabgen : MonoBehaviour
     {
         if (other.tag == "thumb")
         {
-
+            colddownruntime = 0;
             if (players.Length > 1)
             {
-                runtime = 0;
+                holdruntime = 0;
                 players[1].GetComponent<valuerecueve>().boolvalue = false;
                 onetimetrigger = false;
                 trigger = false;
