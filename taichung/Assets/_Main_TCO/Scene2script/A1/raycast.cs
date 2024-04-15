@@ -8,6 +8,7 @@ public class raycast : MonoBehaviour
     public float rayLength = 100f; // 射線長度
     public GameObject build;
     public LineRenderer laserLineRenderer;
+    public bool right;
     public void Update()
     {
         // 從本物件位置發出一條射線
@@ -31,8 +32,18 @@ public class raycast : MonoBehaviour
         }
         else
         {
-            laserLineRenderer.SetPosition(0, this.transform.position);
-            laserLineRenderer.SetPosition(1, this.transform.position + this.transform.forward * rayLength);
+            
+            if (right)
+            {
+                laserLineRenderer.SetPosition(0, this.transform.position);
+                laserLineRenderer.SetPosition(1, this.transform.position + this.transform.forward * -rayLength);
+            }
+            else
+            {
+                laserLineRenderer.SetPosition(0, this.transform.position);
+                laserLineRenderer.SetPosition(1, this.transform.position + this.transform.forward * rayLength);
+            }
+
             laserLineRenderer.material.SetColor("_EmissionColor", Color.red);
             build = null;
         }

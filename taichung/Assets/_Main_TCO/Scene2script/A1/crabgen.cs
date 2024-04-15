@@ -46,12 +46,15 @@ public class crabgen : MonoBehaviour
     }
     void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "thumb" && gesture.GetComponent<GestureDetector>().gesturesnumber == 2 && gesture.GetComponent<LGestureDetector>().gesturesnumber == 2)
+        
+        if (other.tag == "thumb" && gesture.GetComponent<GestureDetector>().gesturesnumber == 2 && gesture.GetComponent<LGestureDetector>().gesturesnumber == 2)
         {
             
             if (players.Length > 1)
             {
                 trigger = true;
+                this.gameObject.transform.GetChild(0).gameObject.GetComponent<MeshRenderer>().material.color = new Color(0f, 1f, 0f, 0.34f);
+                other.gameObject.transform.GetChild(0).gameObject.GetComponent<MeshRenderer>().material.color = new Color(0f, 1f, 0f, 0.34f);
             }
             
         }
@@ -59,15 +62,19 @@ public class crabgen : MonoBehaviour
     }
     void OnTriggerExit(Collider other)
     {
+        
         if (other.tag == "thumb")
         {
             colddownruntime = 0;
             if (players.Length > 1)
             {
+                this.gameObject.transform.GetChild(0).gameObject.GetComponent<MeshRenderer>().material.color = new Color(1f, 0f, 0f, 0.34f);
+                other.gameObject.transform.GetChild(0).gameObject.GetComponent<MeshRenderer>().material.color = new Color(1f, 0f, 0f, 0.34f);
                 holdruntime = 0;
                 players[1].GetComponent<valuerecueve>().boolvalue = false;
                 onetimetrigger = false;
                 trigger = false;
+               
             }
         }
     }

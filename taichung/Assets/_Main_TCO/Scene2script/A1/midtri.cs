@@ -44,7 +44,9 @@ public class midtri : MonoBehaviour
     {
         if (other.tag == "midfinger" && gesture.GetComponent<GestureDetector>().gesturesnumber == 1 && gesture.GetComponent<LGestureDetector>().gesturesnumber == 1)
         {
-            allowtrigger = true;            
+            allowtrigger = true;
+            this.gameObject.transform.GetChild(0).gameObject.GetComponent<MeshRenderer>().material.color = new Color(0f, 1f, 0f, 0.34f);
+            other.gameObject.transform.GetChild(0).gameObject.GetComponent<MeshRenderer>().material.color = new Color(0f, 1f, 0f, 0.34f);
         }
 
 
@@ -58,7 +60,8 @@ public class midtri : MonoBehaviour
             allowtrigger = false;
             if (players.Length > 1)
             {
-                
+                this.gameObject.transform.GetChild(0).gameObject.GetComponent<MeshRenderer>().material.color = new Color(1f, 0f, 0f, 0.34f);
+                other.gameObject.transform.GetChild(0).gameObject.GetComponent<MeshRenderer>().material.color = new Color(1f, 0f, 0f, 0.34f);
                 players[1].GetComponent<valuerecueve>().housevalue = false;
                 
             }
