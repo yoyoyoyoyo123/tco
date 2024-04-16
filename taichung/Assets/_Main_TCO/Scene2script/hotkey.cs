@@ -22,6 +22,15 @@ public class hotkey : MonoBehaviour
     public GameObject Lvfx;
     public int vfxcount;
     public GameObject mainncamera;
+
+    //相機旋轉與移動的速度
+    //原始速度
+    public float speed = 5.0f;
+    //按下後的速度
+    public float acceleration = 10.0f;
+    //旋轉速度
+    public float rotationSpeed = 50.0f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -155,5 +164,38 @@ public class hotkey : MonoBehaviour
             maincamera.transform.rotation = Quaternion.Euler(90, 0, 180);
         }
 
+        // 相機旋轉與移動
+        //left/Right shift加速
+        float currentSpeed = (Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift)) ? acceleration : speed;
+
+        //相機前進與左右移動 用到 WASD 與 上下左右鍵
+        float moveHorizontal = Input.GetAxis("Horizontal") * currentSpeed * Time.deltaTime;
+        float moveVertical = Input.GetAxis("Vertical") * currentSpeed * Time.deltaTime;
+
+        //相機上下移動 用到QE鍵
+        float moveUpDown = 0f;
+        if (Input.GetKey(KeyCode.Q)) { moveUpDown = -1f * currentSpeed * Time.deltaTime; }
+        if (Input.GetKey(KeyCode.E)) { moveUpDown = 1f * currentSpeed * Time.deltaTime; }
+
+        //移動的總程式碼
+        maincamera.transform.Translate(moveHorizontal, moveUpDown, moveVertical);
+
+        //相機旋轉 用到IJKL鍵 只寫抬頭與左右轉頭
+        if (Input.GetKey(KeyCode.I))
+        {
+            maincamera.transform.Rotate(Vector3.right, -rotationSpeed * Time.deltaTime, Space.Self);
+        }
+        if (Input.GetKey(KeyCode.K))
+        {
+            maincamera.transform.Rotate(Vector3.right, rotationSpeed * Time.deltaTime, Space.Self);
+        }
+        if (Input.GetKey(KeyCode.J))
+        {
+            maincamera.transform.Rotate(Vector3.up, -rotationSpeed * Time.deltaTime, Space.World);
+        }
+        if (Input.GetKey(KeyCode.L))
+        {
+            maincamera.transform.Rotate(Vector3.up, rotationSpeed * Time.deltaTime, Space.World);
+        }
     }
 }
